@@ -35,9 +35,11 @@ class ViewController: UIViewController {
         return attributedText
     }
     
-    private func calculateteSize(for attributedString: NSAttributedString, maxWidth: CGFloat) -> CGRect {
+    private func labelSize(for attributedText: NSAttributedString, considering maxWidth: CGFloat) -> CGSize {
         let constraintBox = CGSize(width: maxWidth, height: .greatestFiniteMagnitude)
-        return attributedString.boundingRect(with: constraintBox, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).integral
+        let rect = attributedText.boundingRect(with: constraintBox, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).integral
+
+        return rect.size
     }
     
     override func loadView() {
@@ -45,15 +47,15 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
 
         let attributedText = makeTestAttributedString()
-        let rect = calculateteSize(for: attributedText, maxWidth: 270)
+        let size = labelSize(for: attributedText, considering: 270)
         
-        let messageLabel = MessageLabel(frame: .init(origin: .init(x: 0, y: 50), size: rect.size))
+        let messageLabel = MessageLabel(frame: .init(origin: .init(x: 0, y: 50), size: size))
         messageLabel.backgroundColor = .green
         messageLabel.attributedText = attributedText
         view.addSubview(messageLabel)
         
         
-        let label = UILabel(frame: .init(origin: .init(x: 0, y: 200), size: .init(width: rect.size.width, height: rect.size.height)))
+        let label = UILabel(frame: .init(origin: .init(x: 0, y: 200), size: .init(width: size.width, height: size.height)))
         label.numberOfLines = 0
         label.backgroundColor = .green
         label.attributedText = attributedText
