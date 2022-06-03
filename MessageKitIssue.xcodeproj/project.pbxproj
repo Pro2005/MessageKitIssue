@@ -13,6 +13,7 @@
 		08221085284A4BF100B0E3F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08221083284A4BF100B0E3F8 /* Main.storyboard */; };
 		08221087284A4BF200B0E3F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08221086284A4BF200B0E3F8 /* Assets.xcassets */; };
 		0822108A284A4BF200B0E3F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08221088284A4BF200B0E3F8 /* LaunchScreen.storyboard */; };
+		08221093284A4E0700B0E3F8 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08221092284A4E0700B0E3F8 /* MessageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08221093284A4E0700B0E3F8 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = MessageKitIssue;
+			packageProductDependencies = (
+				08221092284A4E0700B0E3F8 /* MessageKit */,
+			);
 			productName = MessageKitIssue;
 			productReference = 0822107A284A4BF100B0E3F8 /* MessageKitIssue.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 08221071284A4BF100B0E3F8;
+			packageReferences = (
+				08221091284A4E0700B0E3F8 /* XCRemoteSwiftPackageReference "MessageKit" */,
+			);
 			productRefGroup = 0822107B284A4BF100B0E3F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08221091284A4E0700B0E3F8 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08221092284A4E0700B0E3F8 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08221091284A4E0700B0E3F8 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08221072284A4BF100B0E3F8 /* Project object */;
 }
